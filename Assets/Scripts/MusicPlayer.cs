@@ -5,8 +5,9 @@ public class MusicPlayer : MonoBehaviour {
 
     static MusicPlayer instance = null;
 
-    // Use this for initialization
-    void Start () {
+    void Awake() {
+        Debug.Log("Music player Awake " + GetInstanceID());
+
         if (instance != null) {
             Debug.Log("Destroyed dublicate game object");
             Destroy(gameObject);
@@ -14,6 +15,15 @@ public class MusicPlayer : MonoBehaviour {
             instance = this;
             GameObject.DontDestroyOnLoad(gameObject);
         }
+
+    }
+
+    // Use this for initialization
+    void Start () {
+
+        Debug.Log("Music player Start " + GetInstanceID());
+
+
     } 
 
 }
