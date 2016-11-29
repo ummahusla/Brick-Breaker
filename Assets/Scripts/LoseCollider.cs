@@ -3,13 +3,15 @@ using System.Collections;
 
 public class LoseCollider : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    public LevelManager levelManager;
+
+    void OnTriggerEnter2D(Collider2D trigger) {
+        Debug.Log("Trigger");
+        levelManager.LoadLevel("Win Screen");
+    }
+
+    void OnCollisionEnter2D(Collision2D collider) {
+        Debug.Log("Collision");
+    }
+
 }
